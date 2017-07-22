@@ -21,8 +21,9 @@ var app = express();
 
 // views folder:
 app.set('views', path.join(__dirname, 'views'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+// app.engine('html', require('ejs').renderFile);
+// app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 //request parser
 app.use(bodyParser.json());

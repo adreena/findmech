@@ -3,25 +3,16 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/',  function(req,res,next){
-  res.render('index');
+  res.render('index', {active:{home:true,login: false, about:false, contact:false}});
 
-});
-router.get('/login', function(req,res){
-  res.render('login.html');
-});
-router.get('/login/register', function(req,res){
-  res.render('register.html');
-});
-router.post('/login/register', function(req,res){
-  console.log('registered')
 });
 
 router.get('/about', function(req,res){
-  res.render('about.html');
+  res.render('about', {active:{home:false,login: false, about:true, contact:false}});
 });
 
 router.get('/contact', function(req,res){
-  res.render('contact.html');
+  res.render('contact', {active:{home:false,login: false, about:false, contact:true}});
 });
 
 router.post('/contact/send', function(req,res){
