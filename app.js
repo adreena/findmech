@@ -22,7 +22,9 @@ app.get('/', function(req,res){
 app.get('/login', function(req,res){
   res.render('login.html');
 });
-
+app.get('/about', function(req,res){
+  res.render('about.html');
+});
 app.listen(process.env.PORT || 3000, function(){
   console.log("Findmech server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
