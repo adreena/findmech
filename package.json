@@ -1,0 +1,22 @@
+{
+  "name": "findmech",
+  "version": "1.0.0",
+  "description": "simple app to find mechanics near you",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "*",
+    "bootstrap": "^3.3.7",
+    "consolidate": "^0.14.5",
+    "ejs": "^2.5.6",
+    "express": "*",
+    "jade": "*",
+    "nodemailer": "*",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
