@@ -8,3 +8,41 @@ body {
     background-repeat: no-repeat !important;
     background-attachment: fixed;
   }
+
+  .btn-bronze {
+    background-color: #ebc793;
+    border-color: #ebc793;
+  }
+  .btn-bronze:hover,
+  .btn-bronze:focus,
+  .btn-bronze:active,
+  .btn-bronze.active {
+    background-color: #e7bc7d;
+    border-color: #e3b168;
+  }
+
+
+  .btn-gold {
+    background-color: #ffa800;
+    border-color: #ffa800;
+  }
+  .btn-gold:hover,
+  .btn-gold:focus,
+  .btn-gold:active,
+  .btn-gold.active {
+    background-color: #e69700;
+    border-color: #cc8600;
+  }
+
+
+  .btn-silver {
+    background-color: #cccac7;
+    border-color: #cccac7;
+  }
+  .btn-silver:hover,
+  .btn-silver:focus,
+  .btn-silver:active,
+  .btn-silver.active {
+    background-color: #c0bdba;
+    border-color: #b4b1ac;
+  }

@@ -11,93 +11,91 @@
       <% include header %>
     </header>
     <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <form class="" method="post" action="/user/register" style"display:inline-block;">
 
-      <form class="well form-horizontal" action="/users/register" method="post"  id="register_form">
-        <fieldset>
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+								</div>
+							</div>
+						</div>
 
-            <!-- Form Name -->
-            <legend>Registeration Form:</legend>
-
-            <!-- Text input-->
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+								</div>
+							</div>
+						</div>
 
             <div class="form-group">
-              <label class="col-md-4 control-label">First Name</label>
-              <div class="col-md-4 inputGroupContainer">
-              <div class="input-group">
-              <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
-                </div>
+							<label for="email" class="cols-sm-2 control-label">Phone</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="city" id="city"  placeholder="Enter your city"/>
+								</div>
+							</div>
+						</div>
+            <div class="form-group">
+              <label for="email" class="cols-sm-2 control-label">Membership Type</label>
+              <div class="btn-group pull-right" data-toggle="buttons">
+                  <label class="btn btn-bronze btn-outline">
+                    <input type="radio" name="membership" id="bronze"> Bronze
+                  </label>
+                  <label class="btn btn-silver btn-outline">
+                    <input type="radio" name="membership" id="silver"> Silver
+                  </label>
+                  <label class="btn btn-gold btn-outline">
+                    <input type="radio" name="membership" id="gold"> Gold
+                  </label>
               </div>
             </div>
 
-            <!-- Text input-->
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+								</div>
+							</div>
+						</div>
 
-            <div class="form-group">
-              <label class="col-md-4 control-label" >Last Name</label>
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-              <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
-                </div>
-              </div>
-            </div>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
 
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label">E-Mail</label>
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
-                </div>
-              </div>
-            </div>
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+								</div>
+							</div>
+						</div>
 
+						<div class="form-group ">
+							<a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+						</div>
 
-            <!-- Text input-->
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">Phone #</label>
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                  <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
-                </div>
-              </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label">Address</label>
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-              <input name="address" placeholder="Address" class="form-control" type="text">
-                </div>
-              </div>
-            </div>
-
-            <!-- Text input-->
-
-            <div class="form-group">
-              <label class="col-md-4 control-label">City</label>
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                    <input name="city" placeholder="city" class="form-control"  type="text">
-                </div>
-              </div>
-            </div>
-            <!--
-              <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
-            -->
-              <!-- Button -->
-              <div class="form-group">
-                <label class="col-md-4 control-label"></label>
-                <div class="col-md-4">
-                  <button type="submit" class="btn btn-warning" >Register <span class="glyphicon glyphicon-send"></span></button>
-                </div>
-              </div>
-
-          </fieldset>
-        </form>
-      </div> <!-- /container -->
-
-
+					</form>
+        </div>
+      </div>
     </div> <!-- /container -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
