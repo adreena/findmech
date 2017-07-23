@@ -11,15 +11,19 @@
       <% include header %>
     </header>
     <div class="container">
-      <% if(message) {%>
-        <div class="alert alert-danger" role="alert">
-          <ul>
-            <% for(var i=0; i<message.length; i++) {%>
-               <li><%= message[i].param %>, <%= message[i].msg %></li>
-            <% } %>
-          </ul>
+      <div class="row">
+        <div class="col-md-5 col-md-offset-4">
+          <% if(message) {%>
+            <div class="alert alert-danger" role="alert">
+              <ul>
+                <% for(var i=0; i<message.length; i++) {%>
+                   <li><%= message[i].param %>, <%= message[i].msg %></li>
+                <% } %>
+              </ul>
+            </div>
+          <% } %>
         </div>
-      <% } %>
+      </div>
       <div class="row">
         <div class="col-md-5 col-md-offset-4">
 
