@@ -11,9 +11,19 @@
       <% include header %>
     </header>
     <div class="container">
+      <% if(message) {%>
+        <div class="alert alert-danger" role="alert">
+          <ul>
+            <% for(var i=0; i<message.length; i++) {%>
+               <li><%= message[i].param %>, <%= message[i].msg %></li>
+            <% } %>
+          </ul>
+        </div>
+      <% } %>
       <div class="row">
         <div class="col-md-5 col-md-offset-4">
-          <form class="" method="post" action="/user/register" style"display:inline-block;">
+
+          <form action="/users/register" method="post" style"display:inline-block;">
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Your Name</label>
 							<div class="cols-sm-10">
@@ -39,7 +49,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="city" id="city"  placeholder="Enter your city"/>
+									<input type="text" class="form-control" name="phone" id="phone"  placeholder="Enter your city"/>
 								</div>
 							</div>
 						</div>
@@ -83,14 +93,15 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									<input type="password" class="form-control" name="password2" id="confirm"  placeholder="Confirm your Password"/>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group ">
-							<a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+              <button type="submit" value="Submit" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
 						</div>
+
 
 					</form>
         </div>
