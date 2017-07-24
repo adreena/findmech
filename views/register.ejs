@@ -22,6 +22,11 @@
               </ul>
             </div>
           <% } %>
+          <% if(success) {%>
+            <div class="alert alert-success" role="alert">
+              <%= success %>
+            </div>
+          <% } %>
         </div>
       </div>
       <div class="row">

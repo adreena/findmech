@@ -23,7 +23,7 @@ router.get('/myaccount', function(req,res,next){
 })
 
 router.get('/register', function(req, res, next) {
-  res.render('register',{message:'',active:{home:false,login: true, about:false, contact:false, logout:false}});
+  res.render('register',{message:'', success:'',active:{home:false,login: true, about:false, contact:false, logout:false}});
 });
 
 router.get('/login', function(req, res, next) {
@@ -105,7 +105,7 @@ router.post('/register',function(req, res, next) {
   var errors = req.validationErrors();
 
   if(errors){
-  	res.render('register', {message:errors, active:{home:false,login: true, about:false, contact:true, logout:false}});
+  	res.render('register', {message:errors, success:'', active:{home:false,login: true, about:false, contact:true, logout:false}});
   } else{
   	var newUser = new User({
       name: name,
@@ -120,9 +120,7 @@ router.post('/register',function(req, res, next) {
       if(err) throw err;
     });
 
-    req.flash('success', 'You are now registered and can login');
-
-    res.render('register', {message:'You are now registered and can login', active:{home:false,login: true, about:false, contact:true, logout:false}});
+    res.render('register', {message:'',success: 'You are now registered and can login', active:{home:false,login: true, about:false, contact:true, logout:false}});
   }
 });
 
