@@ -66,10 +66,6 @@ app.use(function(req,res,next){
 app.use('/',routes);
 app.use('/users',users);
 
-// app.get('/', function(req,res){
-//   res.render('index.html');
-// });
-
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Findmech server listening on port %d in %s mode", this.address().port, app.settings.env);

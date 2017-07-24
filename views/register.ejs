@@ -17,7 +17,7 @@
             <div class="alert alert-danger" role="alert">
               <ul>
                 <% for(var i=0; i<message.length; i++) {%>
-                   <li><%= message[i].param %>, <%= message[i].msg %></li>
+                   <li><%= message[i].msg %></li>
                 <% } %>
               </ul>
             </div>
@@ -49,35 +49,36 @@
 						</div>
 
             <div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Phone</label>
+							<label for="email" class="cols-sm-2 control-label">Address</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="phone" id="phone"  placeholder="Enter your city"/>
+									<input type="text" class="form-control" name="address" id="address"  placeholder="Enter your Address"/>
 								</div>
 							</div>
 						</div>
+
             <div class="form-group">
-              <label for="email" class="cols-sm-2 control-label">Membership Type</label>
+              <label for="membershipType" class="cols-sm-2 control-label">Membership Type</label>
               <div class="btn-group pull-right" data-toggle="buttons">
                   <label class="btn btn-bronze btn-outline">
-                    <input type="radio" name="membership" id="bronze"> Bronze
+                    <input type="radio" name="membershipType" id="bronze" value="0"> Bronze
                   </label>
                   <label class="btn btn-silver btn-outline">
-                    <input type="radio" name="membership" id="silver"> Silver
+                    <input type="radio" name="membershipType" id="silver" value="1"> Silver
                   </label>
                   <label class="btn btn-gold btn-outline">
-                    <input type="radio" name="membership" id="gold"> Gold
+                    <input type="radio" name="membershipType" id="gold" value="2"> Gold
                   </label>
               </div>
             </div>
 
 						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<label for="username" class="cols-sm-2 control-label">Username(phone)</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your phone"/>
 								</div>
 							</div>
 						</div>
@@ -97,7 +98,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password2" id="confirm"  placeholder="Confirm your Password"/>
+									<input type="password" class="form-control" name="password2" id="password2"  placeholder="Confirm your Password"/>
 								</div>
 							</div>
 						</div>

@@ -15,13 +15,35 @@
             <div class="col-sm-6 col-md-4 col-md-offset-4">
                 <div class="card card-container">
                    <h4 style="margin-bottom: 25px;" class='btn-space'>Login to your account</h4>
-                    <form class="form-signin" action="/login">
-                        <input type="email" id="email" class="form-control btn-space" placeholder="Email address" required autofocus>
-                        <input type="password" id="password" class="form-control btn-space" placeholder="Password" required>
-                        <button class="btn btn-lg btn-primary btn-block btn-signin btn-space" style="margin-top: 25px;" type="submit">Sign in</button>
-                    </form>
+                   <form action="/users/login" method="post" style"display:inline-block;">
+                     <div class="form-group">
+                       <label for="username" class="cols-sm-2 control-label">Username(phone)</label>
+                       <div class="cols-sm-10">
+                         <div class="input-group">
+                           <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                           <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your phone"/>
+                         </div>
+                       </div>
+                     </div>
+
+                     <div class="form-group">
+                       <label for="password" class="cols-sm-2 control-label">Password</label>
+                       <div class="cols-sm-10">
+                         <div class="input-group">
+                           <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                           <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                         </div>
+                       </div>
+                     </div>
+
+
+                     <div class="form-group ">
+                       <button type="submit" value="Submit" id="button" class="btn btn-default btn-lg btn-block login-button">Sing in</a>
+                     </div>
+                   </form>
+                    <a href="/users/register" class="text-center new-account">Create an account</a>
                 </div>
-                <a href="/users/register" class="text-center new-account">Create an account</a>
+
             </div>
         </div>
 

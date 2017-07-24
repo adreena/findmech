@@ -2,20 +2,67 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/',  function(req,res,next){
-  res.render('index', {active:{home:true,login: false, about:false, contact:false}});
+
+function getHeader(toggle){
+  var active ={
+    home:false,
+    login:false,
+    about: false,
+    logout:false
+  };
+  if(toggle == 'home'){
+    active.home = true;
+  }else if (toggle == 'login') {
+    active.login = true;
+  }
+  else if (toggle == 'about') {
+    active.about = true;
+  }
+  else if (toggle == 'contact') {
+    active.contact = true;
+  }
+  return active;
+}
+
+router.get('/', function(req,res,next){
+  console.log('authenticated:', req.isAuthenticated());
+  if(req.isAuthenticated()){
+    res.redirect('/users/myaccount')
+  }
+  else{
+    var active = getHeader('home');
+    res.render('index', {active:active});
+  }
+
 
 });
+/* GET home page. */
+// router.get('/', ensureAuthenticated, function(req, res, next) {
+//   res.render('index', { title: 'Members' });
+// });
+//
+// function ensureAuthenticated(req, res, next){
+// 	if(req.isAuthenticated()){
+//     console.log('>>>',req.isAuthenticated())
+// 		return next();
+// 	}
+//   console.log('****', req.isAuthenticated())
+// 	res.redirect('/users/login');
+// }
+
+
 
 router.get('/about', function(req,res){
-  res.render('about', {active:{home:false,login: false, about:true, contact:false}});
+  var active = getHeader('about');
+  res.render('about', {active:active});
 });
 
 router.get('/contact', function(req,res){
-  res.render('contact', {active:{home:false,login: false, about:false, contact:true}});
+  var active = getHeader('contact');
+  res.render('contact', {active:active});
 });
 
-router.post('/contact/send', function(req,res){
+router.post('/contact/z', function(req,res){
   var transporter = nodemailer.createTransport({
     service:"Gmail",
     auth: {
@@ -41,6 +88,5 @@ router.post('/contact/send', function(req,res){
       }
   });
 });
-
 
 module.exports = router;
