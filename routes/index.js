@@ -57,11 +57,6 @@ router.get('/about', function(req,res){
   res.render('about', {active:active});
 });
 
-router.get('/contact', function(req,res){
-  var active = getHeader('contact');
-  res.render('contact', {active:active});
-});
-
 router.post('/contact/z', function(req,res){
   var transporter = nodemailer.createTransport({
     service:"Gmail",

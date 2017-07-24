@@ -13,78 +13,14 @@
     </header>
     <main>
       <div class="container">
-          <p>logged in status: </p>
-          <p>Name: <%= user.name %></p>
-          <p>Phone: <%= user.username %></p>
-          <p>Membership Type: <%= user.membershipType %></p>
-          <div id="map" class="col-md-8" style="width:400px;height:400px;"></div>
+        <h4>Name: <%= user.name %></h4>
+        <h6>Phone: <%= user.username %> </h6>
+        <h6>Membership Type: <%= user.membershipType %> </h6>
+        <h6>Expires on: ()</h6>
       </div>
-
 
       </div>
     </main>
-    <script>
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
 
-      var map, infoWindow;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 6
-        });
-        infoWindow = new google.maps.InfoWindow;
-
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            console.log(pos)
-            var latlng = new google.maps.LatLng(pos.lat, pos.lng);
-            var geocoder = new google.maps.Geocoder();
-            geocoder.geocode({'latLng': latlng}, function(results, status) {
-              if(status == google.maps.GeocoderStatus.OK) {
-                  if(results[1]) {
-                      //formatted address
-                      var address = results[0].formatted_address;
-                      console.log(address)
-                      infoWindow.setContent(address);
-                      infoWindow.open(map);
-                      map.setCenter(pos);
-                  } else {
-                      alert("No results found");
-                  }
-              } else {
-                  alert("Geocoder failed due to: " + status);
-              }
-            });
-
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-      }
-
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGIxdpaXoOm5tuLo4LtZuaMSXMj47Exjw&callback=initMap">
-    </script>
   </body>
 </html>

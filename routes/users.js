@@ -132,4 +132,13 @@ router.get('/logout', function(req, res){
   res.redirect('/users/login');
 });
 
+router.get('/request', function(req,res){
+  if (req.isAuthenticated() && req.user){
+    res.render('request', {user:req.user})
+  }
+  else {
+    res.redirect('/');
+  }
+})
+
 module.exports = router;
